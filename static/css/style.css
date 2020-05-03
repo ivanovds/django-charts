@@ -1,0 +1,48 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+body .head {
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(75,192,192);
+}
+
+*:focus {
+   outline: none;
+ }
+ .content {
+   padding-top: 50px ;
+   text-align: center;
+ }
+
+ .content  .currency-ajax-form{
+   padding-top: 50px;
+   padding-bottom: 50px;
+ }
+
+ .content  .currency-ajax-form input{
+   width: 200px;
+   border: 2px solid rgba(75,192,192,0.2);
+   border-radius: 4px;
+   background-color: rgba(75,192,192,0.2);
+ }
+
+ .content  .currency-ajax-form label{
+   display: none;
+ }
+
+ .content  .currency-ajax-form #id_rate{
+     padding: 2px;
+ }
+
+  .content  .currency-ajax-form .error{
+     color: crimson;
+ }
+
+ .content  .currency-ajax-form .success{
+     color: forestgreen;
+ }
+

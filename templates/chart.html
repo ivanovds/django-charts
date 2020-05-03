@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>USD rate history</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+  <!-- Bootstrap Stylesheets -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Main Stylesheet File -->
+  <link  rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 ">
+            <div class="content">
+                <span class="head">It is web-application that allows you to save currency rates and display chart based on this data</span>
+
+                <form class='currency-ajax-form ' method='POST' action='.'
+                      data-url='{{ request.build_absolute_uri|safe }}'>
+                 {% csrf_token %}
+                 {{form.as_p|safe}}
+                 <input type='submit' id="saveButton" value="Save">
+                </form>
+
+                <canvas id="currency-chart" data-url="{% url 'chart:currency-chart' %}" ></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+<!-- Template Main Javascript File -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
